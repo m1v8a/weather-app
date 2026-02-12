@@ -85,6 +85,12 @@ button {
   box-shadow:
     0px 2px 3px var(--clr-dark-30),
     inset 0px 1px 1px var(--clr-light-100);
+  cursor: pointer;
+}
+
+.btn:hover,
+button:hover {
+  background-color: var(--clr-light-80);
 }
 
 button.icon {
@@ -99,7 +105,8 @@ button.icon {
 .container {
   background-color: var(--clr-light-100);
   border-radius: var(--sz-0-50);
-  box-shadow: 0 0 8px var(--clr-light-70);
+  box-shadow: 0px 1px 1px var(--clr-light-70);
+  padding: var(--sz-1);
 }
 
 main {
@@ -114,12 +121,13 @@ main {
     display: grid;
     place-content: center;
 
-    & .search-input {
+    & .search-input-cont {
       display: flex;
       gap: var(--gap-1);
 
       & input {
         text-align: center;
+        border-color: var(--clr-light-90);
       }
 
       & button {

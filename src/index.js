@@ -1,7 +1,13 @@
+import { displayDetails } from "./modules/display.js";
 import { getWeatherData } from "./modules/weather.js";
-
 import "./style.css";
 
-// getWeatherData("manila", (data) => {
-//   console.log(data);
-// });
+const searchButton = document.querySelector("#search-button");
+const searchInput = document.querySelector("#search-input");
+
+searchButton.addEventListener("click", () => {
+  if (!searchInput.value) return;
+  getWeatherData(searchInput.value, (data) => {
+    displayDetails(data);
+  });
+});
