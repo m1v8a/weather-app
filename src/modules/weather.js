@@ -1,26 +1,9 @@
-import testFetch from "../testdata/testFetch.js";
+const key = "UZR29U7FSECY5TFVFJWAM8CVW";
 
-export async function getWeatherData(callback) {
-  const res = await testFetch();
+export async function getWeatherData(location, callback) {
+  const res = await fetch(
+    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=${key}`
+  );
   const data = await res.json();
   callback(await data);
-}
-
-export function parseWeatherData(data) {
-  const conditions = data.currentConditions;
-  return {
-    conditions: conditions.conditions,
-    timezone: data.timezone,
-    temp: conditions.temp,
-    feelslike: conditions.feelslike,
-    wind: {
-      dir: conditions.winddir,
-      gust: conditions.windgust,
-      speed: conditions.windspeed,
-    },
-    sun: {
-      set: conditions.sunset,
-      rise: conditions.sunrise,
-    },
-  };
 }

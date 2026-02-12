@@ -1,6 +1,7 @@
-import { getWeatherData, parseWeatherData } from "./modules/weather.js";
+import { getWeatherData } from "./modules/weather.js";
+
 import "./style.css";
 
-getWeatherData((data) => {
-  console.log(data);
-});
+// getWeatherData("manila", (data) => {
+//   console.log(data);
+// });
