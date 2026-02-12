@@ -9,5 +9,6 @@ searchButton.addEventListener("click", () => {
   if (!searchInput.value) return;
   getWeatherData(searchInput.value, (data) => {
     displayDetails(data);
+    console.log(data);
   });
 });

@@ -4,8 +4,15 @@
   margin: 0;
 }
 
+@font-face {
+  font-family: Inter;
+  src: url("./asset/fonts/Inter-variableFont.ttf");
+  font-display: swap;
+}
+
 :root {
   --clr-light-100: hsl(0, 0%, 100%);
+  --clr-light-95: hsl(0, 0%, 95%);
   --clr-light-90: hsl(0, 0%, 90%);
   --clr-light-80: hsl(0, 0%, 80%);
   --clr-light-70: hsl(0, 0%, 70%);
@@ -53,6 +60,10 @@
   --gap-1: var(--sz-1);
 }
 
+html {
+  font-family: Inter, sans-serif;
+}
+
 p {
   line-height: 1.5;
 }
@@ -64,7 +75,7 @@ body {
 .wrapper {
   max-width: 1440px;
   margin: var(--sz-3) auto;
-  height: 90vh;
+  height: min(800px, 90vh);
 }
 
 input {
@@ -91,6 +102,10 @@ button {
 .btn:hover,
 button:hover {
   background-color: var(--clr-light-80);
+}
+
+.icon-main {
+  width: calc(var(--sz-5) * 2.5);
 }
 
 button.icon {
@@ -138,6 +153,43 @@ main {
 
   & > .details {
     grid-area: 1 / 1 / 7 / 5;
+    display: flex;
+    flex-direction: column;
+    gap: var(--sz-1);
+
+    & .heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #333;
+      padding: var(--sz-0-50);
+    }
+
+    & .datetime {
+      background-color: var(--clr-dark-10);
+      padding: var(--sz-0-25) var(--sz-1);
+      color: var(--clr-light-100);
+      border-radius: var(--sz-0-25);
+    }
+
+    & .condition-cont {
+      padding: var(--sz-0-50) var(--sz-2);
+      width: 100%;
+      display: grid;
+      place-content: center;
+      text-align: center;
+      gap: var(--sz-1);
+      font-size: var(--sz-1-50);
+    }
+
+    & .description-cont {
+      background-color: var(--clr-light-90);
+      padding: var(--sz-0-50) var(--sz-0-75);
+      height: 100%;
+      box-shadow:
+        0 1px 2px var(--clr-light-70),
+        inset 0 3px 2px var(--clr-light-100);
+    }
   }
 
   & > .temps {
