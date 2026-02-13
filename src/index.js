@@ -1,4 +1,8 @@
-import { displayDetails, displayMeasurements } from "./modules/display.js";
+import {
+  displayDetails,
+  displayForecasts,
+  displayMeasurements,
+} from "./modules/display.js";
 import { getWeatherData } from "./modules/weather.js";
 import "./style.css";
 
@@ -10,6 +14,7 @@ searchButton.addEventListener("click", () => {
   getWeatherData({ location: searchInput.value }, (data) => {
     displayDetails(data);
     displayMeasurements(data);
+    displayForecasts(data);
   });
 });
 

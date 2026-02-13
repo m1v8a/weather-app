@@ -18,33 +18,58 @@
             <button id="search-button">Get weather</button>
           </div>
         </nav>
-        <div id="details-container" class="details container"></div>
+        <div id="details-container" class="details container">
+          <header></header>
+          <div id="details-body-container" class="details-body">
+            <div id="icon-container"></div>
+            <div id="descriptions-container"></div>
+          </div>
+        </div>
         <div id="measurements-container" class="measurements container"></div>
         <div class="forecast container">
           <nav>
+            <ol class="hours-buttons">
+              <li data-value="00:00">12:00 am</li>
+              <li data-value="01:00">01:00 am</li>
+              <li data-value="02:00">02:00 am</li>
+              <li data-value="03:00">03:00 am</li>
+              <li data-value="04:00">04:00 am</li>
+              <li data-value="05:00">05:00 am</li>
+              <li data-value="06:00">06:00 am</li>
+              <li data-value="07:00">07:00 am</li>
+              <li data-value="08:00">08:00 am</li>
+              <li data-value="09:00">09:00 am</li>
+              <li data-value="10:00">10:00 am</li>
+              <li data-value="11:00">11:00 am</li>
+              <li data-value="12:00">12:00 pm</li>
+              <li data-value="13:00">01:00 pm</li>
+              <li data-value="14:00">02:00 pm</li>
+              <li data-value="15:00">03:00 pm</li>
+              <li data-value="16:00">04:00 pm</li>
+              <li data-value="17:00">05:00 pm</li>
+              <li data-value="18:00">06:00 pm</li>
+              <li data-value="19:00">07:00 pm</li>
+              <li data-value="20:00">08:00 pm</li>
+              <li data-value="21:00">09:00 pm</li>
+              <li data-value="22:00">10:00 pm</li>
+              <li data-value="23:00">11:00 pm</li>
+            </ol>
+          </nav>
+          <aside class="date-nav">
             <button class="icon">
-              <svg
-                class="icon"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 256 512"
-              >
-                <!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
-                <path
-                  d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
-                />
-              </svg>
+              <img src="asset/icons/chevron-left.svg" alt="" />
             </button>
             <p id="datetime">Feb. 12, 2026</p>
             <button class="icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
-                <!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
-                <path
-                  d="M247.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L179.2 256 41.9 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
-                />
-              </svg>
+              <img src="asset/icons/chevron-right.svg" alt="" />
             </button>
-          </nav>
-          <ol class="hourly-temp-list"></ol>
+          </aside>
+          <div class="forecast-data">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+            facere necessitatibus aspernatur hic laborum accusantium consequatur
+            ducimus quo sint, eos at eaque magni ipsam perferendis. Sit, nulla.
+            Molestiae, sapiente voluptatibus.
+          </div>
         </div>
       </main>
     </div>

@@ -3,28 +3,24 @@ import arrowIcon from "../asset/icons/arrow.svg";
 
 export function displayDetails(data) {
   const container = document.querySelector("#details-container");
+
   const currentConditions = data.currentConditions;
 
-  const heading = document.createElement("div");
-  const descriptionCont = document.createElement("div");
-  const conditionCont = document.createElement("div");
-  const iconCont = document.createElement("div");
+  const header = container.querySelector("header");
+  const iconCont = container.querySelector("#icon-container");
+  const descriptionsCont = container.querySelector("#descriptions-container");
+
   const descriptionEl = document.createElement("p");
   const addressEl = document.createElement("h1");
   const conditionsEl = document.createElement("p");
   const datetimeEl = document.createElement("p");
   const iconImg = document.createElement("img");
 
-  heading.className = "heading";
-  descriptionCont.className = "description-cont";
-  conditionCont.className = "condition-cont";
-  iconCont.className = "icon-cont";
-
   descriptionEl.className = "description";
   addressEl.className = "address";
   datetimeEl.className = "datetime";
   conditionsEl.className = "conditions";
-  iconImg.className = "icon-main";
+  iconImg.className = "icon-large";
 
   descriptionEl.innerText = data.description;
   addressEl.innerText = data.resolvedAddress;
@@ -34,13 +30,13 @@ export function displayDetails(data) {
     iconImg.src = value.default;
   });
 
-  heading.append(addressEl, datetimeEl);
-  descriptionCont.append(descriptionEl);
-  iconCont.append(iconImg);
-  conditionCont.append(iconCont, conditionsEl);
+  header.innerHTML = "";
+  descriptionsCont.innerHTML = "";
+  iconCont.innerHTML = "";
 
-  container.innerHTML = "";
-  container.append(heading, conditionCont, descriptionCont);
+  header.append(addressEl, datetimeEl);
+  descriptionsCont.append(conditionsEl, descriptionEl);
+  iconCont.append(iconImg);
 }
 
 export function displayMeasurements(data) {
@@ -98,4 +94,13 @@ export function displayMeasurements(data) {
 
   container.innerHTML = "";
   container.append(table);
+}
+
+export function displayForecasts(data) {
+  const container = document.createElement("ol");
+
+  container.innerHTML = `
+  `;
+
+  return container;
 }
