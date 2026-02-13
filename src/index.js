@@ -1,4 +1,4 @@
-import { displayDetails } from "./modules/display.js";
+import { displayDetails, displayMeasurements } from "./modules/display.js";
 import { getWeatherData } from "./modules/weather.js";
 import "./style.css";
 
@@ -7,8 +7,12 @@ const searchInput = document.querySelector("#search-input");
 
 searchButton.addEventListener("click", () => {
   if (!searchInput.value) return;
-  getWeatherData(searchInput.value, (data) => {
+  getWeatherData({ location: searchInput.value }, (data) => {
     displayDetails(data);
-    console.log(data);
+    displayMeasurements(data);
   });
+});
+
+getWeatherData({ location: "Morrocco" }, (data) => {
+  console.log(data);
 });
