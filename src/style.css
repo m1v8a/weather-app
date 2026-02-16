@@ -122,10 +122,31 @@ img {
 
 .icon-small {
   width: var(--sz-1);
+
+  & > svg {
+    width: var(--sz-1);
+  }
+}
+
+.icon-medium {
+  width: var(--sz-2-50);
+  & > svg {
+    width: var(--sz-2-50);
+  }
 }
 
 .icon-large {
   width: var(--sz-4);
+  & > svg {
+    width: var(--sz-4);
+  }
+}
+
+.icon-x-large {
+  width: var(--sz-5);
+  & > svg {
+    width: var(--sz-5);
+  }
 }
 
 main {
@@ -139,62 +160,47 @@ main {
 
   & general-details {
     width: 100%;
-    display: flex;
 
-    & > * {
-      width: 100%;
-    }
+    & > .heading {
+      display: flex;
+      gap: var(--sz-1);
 
-    & .details-container {
-      background-color: var(--clr-light-90);
-      padding: var(--sz-0-75) var(--sz-1);
-      border-radius: var(--sz-0-75);
-
-      & .location-section {
-        display: flex;
-        gap: var(--sz-0-50);
-        background-color: var(--clr-dark-10);
-        color: var(--clr-light-100);
-        border-radius: var(--b-rad-medium);
-        width: fit-content;
-        padding: var(--sz-0-25) var(--sz-1);
+      & > * {
+        flex: 1;
       }
 
-      & .condition-section {
+      & > .basic-details {
         display: flex;
         flex-direction: column;
         gap: var(--sz-0-50);
+        background-color: var(--clr-light-90);
+        padding: var(--sz-1);
+        border-radius: var(--b-rad-medium);
 
-        & *:first-child {
+        & .location-container {
           display: flex;
-          gap: var(--sz-1);
+          gap: var(--sz-0-50);
+          background-color: var(--clr-light-100);
+          padding: var(--sz-0-50) var(--sz-1);
+          width: fit-content;
+          border-radius: var(--b-rad-medium);
+          color: var(--clr-dark-10);
         }
 
-        & *:last-child {
+        & .condition-container {
+          display: flex;
+          gap: var(--sz-0-50);
+        }
+
+        & #description {
           color: var(--clr-dark-30);
         }
       }
-    }
 
-    & .sun-riseset-container {
-      display: grid;
-      place-content: center;
-      gap: 1rem;
-
-      & > * {
+      & > .sunrise-sunset-details {
         display: flex;
         align-items: center;
-        gap: var(--sz-1);
-        justify-content: center;
-        width: fit-content;
-
-        & #sunrise,
-        & #sunset {
-          background-color: var(--clr-dark-10);
-          color: var(--clr-light-100);
-          border-radius: var(--b-rad-medium);
-          padding: var(--sz-0-25) var(--sz-1);
-        }
+        justify-content: space-evenly;
       }
     }
   }

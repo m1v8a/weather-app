@@ -10,31 +10,29 @@ export default class GeneralDetails extends HTMLElement {
 
     this.setAttribute("hidden", "");
     this.innerHTML = `
-      <section class="details-container">
-        <div class="location-section">
-          <img class="icon-small" src=${locationIcon} alt="">
-          <p id="location"></p> 
+    <section class="heading">
+      <div class="basic-details">
+        <div class="location-container">
+          <img src=${locationIcon} class="icon-small" alt="#">
+          <p id="location"></p>
         </div>
-        <div class="condition-section">
-          <div>
-            <h1 id="condition"></h1> 
-            <div id="icon" class="icon-large"></div>
-          </div>
-          <div>
-            <p id="description"></p>
-          </div>
+        <div class="condition-container">
+          <h1 id="condition"></h1>
+          <span id="icon" class="icon-large"></span>
         </div>
-      </section>
-      <section class="sun-riseset-container">
-        <div>
+        <p id="description"></p>
+      </div>
+      <div class="sunrise-sunset-details">
+        <div class="sunrise-container">
+          <img class="icon-x-large" src=${sunriseIcon} alt="Sunrise">
           <p id="sunrise"></p>
-          <img class="icon-large" src=${sunriseIcon} alt="Sunrise">
         </div>
-        <div>
-          <img class="icon-large" src=${sunsetIcon} alt="Sunset">
+        <div class="sunset-container"> 
+          <img class="icon-x-large" src=${sunsetIcon} alt="Sunset">
           <p id="sunset"></p>
         </div>
-      </section>
+      </div>
+    </section>
     `;
   }
 
