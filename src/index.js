@@ -1,23 +1,13 @@
-import {
-  displayDetails,
-  displayForecasts,
-  displayMeasurements,
-} from "./modules/display.js";
-import { getWeatherData } from "./modules/weather.js";
+import GeneralDetails from "./components/GeneralDetails.js";
+import SearchBar from "./components/SearchBar.js";
 import "./style.css";
 
-const searchButton = document.querySelector("#search-button");
-const searchInput = document.querySelector("#search-input");
+customElements.define("search-bar", SearchBar);
+customElements.define("general-details", GeneralDetails);
 
-searchButton.addEventListener("click", () => {
-  if (!searchInput.value) return;
-  getWeatherData({ location: searchInput.value }, (data) => {
-    displayDetails(data);
-    displayMeasurements(data);
-    displayForecasts(data);
-  });
-});
+const html = `
+<search-bar button-text="Get Weather"></search-bar>
+<general-details></general-details>    
+`;
 
-getWeatherData({ location: "Morrocco" }, (data) => {
-  console.log(data);
-});
+document.querySelector("#root").innerHTML = html;
