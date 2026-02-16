@@ -20,14 +20,8 @@ export default class SearchBar extends HTMLElement {
           const loc = document.querySelector("#search-input").value;
           if (!loc) throw Error("Location is not specified");
 
-          const data = await fetchWeather({ loc });
-
-          console.log(data);
-          const generalDetails = document.querySelector("general-details");
-          generalDetails.setProps({
-            location: data.resolvedAddress,
-            condition: data.currentConditions.conditions,
-            icon: data.currentConditions.icon,
+          fetchWeather({ loc }, (data) => {
+            document.querySelector("general-details").getDetails(data);
           });
         } catch (err) {
           console.error(err);

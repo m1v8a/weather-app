@@ -58,6 +58,10 @@
   --p-input: var(--sz-0-75) var(--sz-1);
 
   --gap-1: var(--sz-1);
+
+  --b-rad-small: var(--sz-0-25);
+  --b-rad-medium: var(--sz-0-50);
+  --b-rad-large: var(--sz-1);
 }
 
 html {
@@ -110,132 +114,88 @@ button:hover {
   background-color: var(--clr-light-80);
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 .icon-small {
   width: var(--sz-1);
 }
-.icon-med {
-  width: var(--sz-1-50);
-}
 
 .icon-large {
-  width: calc(var(--sz-5) * 2.5);
-}
-
-button.icon {
-  background-color: transparent;
-  box-shadow: unset;
-
-  img {
-    width: var(--sz-1-25);
-  }
-}
-
-.container {
-  background-color: var(--clr-light-100);
-  border-radius: var(--sz-0-50);
-  box-shadow: 0px 1px 1px var(--clr-light-70);
-  padding: var(--sz-1);
+  width: var(--sz-4);
 }
 
 main {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, 1fr);
-  height: 100%;
-  gap: var(--gap-1);
+  max-width: 1024px;
+  margin: var(--sz-4) auto;
+  padding: var(--sz-1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sz-2);
 
-  & > .nav-bar {
-    grid-area: 1 / 6 / 3 / -1;
-    display: grid;
-    place-content: center;
-
-    & .search-input-cont {
-      display: flex;
-      gap: var(--gap-1);
-
-      & input {
-        text-align: center;
-        border-color: var(--clr-light-90);
-      }
-
-      & button {
-        transform: translateY(-2px);
-      }
-    }
-  }
-
-  & > .details {
-    grid-area: 1 / 1 / 7 / 6;
+  & general-details {
+    width: 100%;
     display: flex;
-    flex-direction: column;
 
-    & .details-body {
-      display: flex;
-      flex: 1;
-
-      & > div {
-        flex: 1;
-      }
-
-      & #icon-container {
-        display: grid;
-        place-content: center;
-      }
+    & > * {
+      width: 100%;
     }
-  }
 
-  & > .measurements {
-    grid-area: 3 / 6 / 7 / -1;
+    & .details-container {
+      background-color: var(--clr-light-90);
+      padding: var(--sz-0-75) var(--sz-1);
+      border-radius: var(--sz-0-75);
 
-    table {
-      border-collapse: collapse;
-      height: 100%;
+      & .location-section {
+        display: flex;
+        gap: var(--sz-0-50);
+        background-color: var(--clr-dark-10);
+        color: var(--clr-light-100);
+        border-radius: var(--b-rad-medium);
+        width: fit-content;
+        padding: var(--sz-0-25) var(--sz-1);
+      }
 
-      & tr {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        text-align: center;
-        padding: 0.5rem;
+      & .condition-section {
+        display: flex;
+        flex-direction: column;
+        gap: var(--sz-0-50);
 
-        & td {
-          display: grid;
-          place-content: center;
+        & *:first-child {
+          display: flex;
+          gap: var(--sz-1);
+        }
+
+        & *:last-child {
+          color: var(--clr-dark-30);
         }
       }
     }
-  }
 
-  & > .forecast {
-    grid-area: 7 / 1 / -1 / -1;
+    & .sun-riseset-container {
+      display: grid;
+      place-content: center;
+      gap: 1rem;
 
-    display: grid;
-    grid-template-columns: repeat(18, 1fr);
-    grid-template-rows: repeat(12, 1fr);
-    gap: var(--sz-1);
-
-    & nav {
-      display: flex;
-      grid-area: 1 / 2 / 4 / -1;
-
-      & .hours-buttons {
+      & > * {
         display: flex;
-        list-style-type: none;
+        align-items: center;
+        gap: var(--sz-1);
+        justify-content: center;
+        width: fit-content;
+
+        & #sunrise,
+        & #sunset {
+          background-color: var(--clr-dark-10);
+          color: var(--clr-light-100);
+          border-radius: var(--b-rad-medium);
+          padding: var(--sz-0-25) var(--sz-1);
+        }
       }
-    }
-
-    & aside {
-      grid-area: 1 / 1 / -1 / 2;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      border: 1px solid var(--clr-light-70);
-      background-color: var(--clr-light-80);
-    }
-
-    & .forecast-data {
-      grid-area: 4 / 2 / -1 / -1;
     }
   }
 }
