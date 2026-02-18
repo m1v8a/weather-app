@@ -3,12 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Webpack Template</title>
+    <title>Weather App</title>
   </head>
-  <body>
-    <main id="root">
-      <search-bar button-text="Get Weather"></search-bar>
-      <general-details></general-details>
+  <body id="root">
+    <header>
+      <input id="location-input" type="search" />
+      <button id="get-weather-button">Get Weather</button>
+    </header>
+    <main id="content">
+      <div class="general">
+        <section class="basic-info">
+          <div class="location-cont">
+            <img
+              class="icon-sm"
+              src="./asset/icons/ui/location-dot.svg"
+              alt=""
+            />
+            <p id="location">Manila</p>
+          </div>
+          <div class="conditions-cont">
+            <div class="weather-heading-cont">
+              <h1 id="condition">Cold</h1>
+              <img
+                id="condition-icon"
+                class="icon-md"
+                src="./asset/icons/weather-conditions/cloudy.svg"
+                alt=""
+              />
+            </div>
+            <p id="description">A little rain won't hurt</p>
+          </div>
+        </section>
+        <section class="statistics">
+          <table>
+            <tbody>
+              <tr>
+                <th id="temp">Temperature</th>
+                <td id="current-temp" headers="temp">45 &deg;c</td>
+                <th id="sunrise">Sunrise</th>
+                <td id="sunrise-time" headers="sunrise">6:00 AM</td>
+              </tr>
+              <tr>
+                <th id="fl">Feels like</th>
+                <td id="feels-like" headers="fl">43 &deg;c</td>
+                <th id="sunset">Sunset</th>
+                <td id="sunset-time" headers="sunset">6:00 PM</td>
+              </tr>
+              <tr>
+                <th>Wind</th>
+                <td>
+                  <img
+                    id="wind-dir"
+                    class="icon-sm"
+                    src="./asset/icons/ui/arrow.svg"
+                    alt="directional arrow"
+                  />
+                  <span id="wind-speed"> 14 </span>
+                </td>
+              </tr>
+              <tr>
+                <th>Wind Gust</th>
+                <td id="wind-gust">34</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
     </main>
+    <div id="loading-screen">
+      <div></div>
+    </div>
   </body>
 </html>

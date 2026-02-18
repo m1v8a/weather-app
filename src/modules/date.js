@@ -3,21 +3,25 @@ export function formatTime(time) {
   const minutes = time.slice(3, 5);
   hours = hours[0] === "0" ? Number(hours[1]) : Number(hours);
   let hr = hours;
-  let merediem = "am";
+  let meridiem = "am";
   if (hours >= 12 && hours < 23) {
     if (hours - 12 <= 0) {
       hr = 12;
     } else {
       hr = hours - 12;
     }
-    merediem = "pm";
+    meridiem = "pm";
   } else {
     if (hours === 23) {
       hr = 12;
     } else {
       hr = hours === 0 ? 12 : hours;
     }
-    merediem = "am";
+    meridiem = "am";
   }
-  return `${hr < 10 ? "0" + hr : hr}:${minutes} ${merediem}`;
+  return {
+    hour: hr < 10 ? "0" + hr : hr,
+    minutes,
+    meridiem,
+  };
 }
