@@ -6,11 +6,9 @@
   "scripts": {
     "dev": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "predeploy": "npm run gh-pages && git merge main --no-edit",
-    "deploy": "npm run gh-pages-commit && npm run gh-pages-push",
-    "gh-pages": "git branch gh-pages & git checkout gh-pages",
-    "gh-pages-commit": "git add dist -f && git commit -m 'Deployment'",
-    "gh-pages-push": "git subtree push --prefix dist origin gh-pages",
+    "predeploy": "git add dist -f && git commit -m 'Deploymeny commit'",
+    "deploy": "git subtree push --prefix dist origin gh-pages",
+    "postdeploy": "git checkout main",
     "commit": "git add . && git commit"
   },
   "keywords": [],
